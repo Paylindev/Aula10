@@ -1,0 +1,33 @@
+Aula 09 - Criação do Banco de Dados e String de Conexão
+
+- Adicionou Checkbox.
+- Utilizou empty para verificar se a variável está vazia.
+- Banco de dados: SistemaWebDatabase
+CREATE DATABASE SistemaWebDatabase
+USE SistemaWebDatabase
+CREATE TABLE clientes ()
+- Tabela: clientes
+$nome VARCHAR(80) não nulo
+$nasc DATE não nulo
+$endereco VARCHAR(100) não nulo
+$genero CHAR(1) não nulo
+$novosProdutos VARCHAR(3) não nulo
+$ofertas VARCHAR(3) não nulo
+
+CREATE TABLE clientes (
+    codigo INT AUTO_INCREMENT PRIMARY KEY, 
+    nome VARCHAR(80) NOT NULL, 
+    nasc DATE NOT NULL, 
+    endereco VARCHAR(100) NOT NULL, 
+    genero VARCHAR(3) NOT NULL, 
+    novosprodutos CHAR NOT NULL, 
+    ofertas CHAR NOT NULL
+)
+
+- CRUD ( C = CREAD --> INSERT ) 
+INSERT INTO clientes (nome, nasc, endereco, genero, novosprodutos, ofertas) VALUES ('$nome', '$nasc', '$endereco', '$genero', '$novosProdutos', '$ofertas');
+
+$sql = $conectar -> prepare ("INSERT INTO clientes (nome, nasc, endereco, genero, novosprodutos, ofertas) VALUES ('$nome', '$nasc', '$endereco', '$genero', '$novosProdutos', '$ofertas')");
+
+$sql -> execute();
+header("location: index.html");

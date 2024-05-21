@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 08 - Sistema de Cadastro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #E0FFFF;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            background-color: #111D6F;
+        }
+
+        form {
+            padding: 20px;
+            background-color: #FFA378;
+            border-radius: 5px;
+        }
+
+        form input[type="text"],  form input[type="date"]{
+            border-radius: 5px;
+            padding: 10px;
+            width: 90%;
+            outline: none;
+            border: none;
+            margin: 10px 0px;
+        }
+
+        form input[type="submit"] {
+            padding: 10px;
+            width: 120px;
+            background-color: #EEE9C1;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>CADASTRO</h1>
+    <form action="recebeDados.php" method="get">
+
+        <!-- Pode alterar o tamanho da do input com size -->
+        <input type="text" name="fNome" id="" placeholder="Informe o nome" maxlength="80" required>
+        <br>
+
+        <input type="date" name="fNasc" id="" required>
+        <br>
+
+        <input type="text" name="fEnd" id="" placeholder="Informe o endereço" required>
+        <br>
+        <br>
+        <input type="radio" name="fGenero" id="" value="feminino" required>Feminino
+        <input type="radio" name="fGenero" id="" value="masculino">Masculino
+        <input type="radio" name="fGenero" id="" value="outros">Outro
+
+        <br><br>
+        <input type="checkbox" name="fInfo1" value="sim">
+        <label for="fInfo1">Tem interesse em novos produtos?</label>
+        <br>
+        <input type="checkbox" name="fInfo2" value="sim">
+        <label for="fInfo2">Quer receber nossas ofertas?</label>
+
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
